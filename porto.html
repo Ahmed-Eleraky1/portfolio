@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmed Eleraky — Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* ---------- Variables ---------- */
+    :root{
+      --bg:#071226;
+      --card:#0f1724;
+      --muted:#94a3b8;
+      --accent:#20c997; /* turquoise */
+      --accent-2:#38bdf8; /* sky */
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    /* ---------- Base ---------- */
+    *{box-sizing:border-box}
+    body{background:radial-gradient(1200px 600px at 10% 10%, rgba(32,201,151,0.04), transparent), linear-gradient(180deg,#071226 0%, #041021 100%); color:#e6eef6; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+    a{color:var(--accent-2); text-decoration:none}
+
+    /* ---------- Layout ---------- */
+    header{min-height:80vh; display:flex; align-items:center}
+    .container-hero{display:flex; gap:3rem; align-items:center; justify-content:space-between}
+
+    /* ---------- Profile circular reveal ---------- */
+    .profile-wrap{position:relative; width:360px; height:360px; flex:0 0 360px;}
+    .profile-bg{position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle at 30% 20%, rgba(56,189,248,0.08), transparent 30%), linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.85)); display:flex; align-items:center; justify-content:center;}
+    .profile-clip{width:300px; height:300px; border-radius:50%; overflow:hidden; transform:translateY(20px) scale(0.98); transition:transform .8s cubic-bezier(.2,.9,.3,1), opacity .6s; box-shadow: 0 20px 40px rgba(2,6,23,0.6);}
+    .profile-clip img{width:100%; height:100%; object-fit:cover; display:block; filter: contrast(1.02) saturate(1.05);} 
+    .profile-clip.revealed{transform:translateY(0) scale(1);}
+
+    /* small circular inner glow */
+    .profile-ring{position:absolute; inset:10px; border-radius:50%; box-shadow:0 0 60px rgba(56,189,248,0.06) inset, 0 6px 30px rgba(2,6,23,0.6); pointer-events:none}
+
+    /* ---------- Hero text ---------- */
+    .hero-title{font-size:2.4rem; letter-spacing:1px; margin-bottom:.2rem}
+    .hero-sub{color:var(--accent-2); font-weight:600}
+    .hero-desc{color:var(--muted); max-width:650px}
+
+    /* CTA */
+    .btn-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#042028; font-weight:700; border-radius:30px; padding:.6rem 1.15rem}
+
+    /* ---------- Skills ---------- */
+    .skills .tag{display:inline-block; background:var(--glass); padding:.45rem .9rem; border-radius:999px; margin:.25rem; color:var(--muted); font-weight:600}
+
+    /* ---------- Project Card ---------- */
+    .project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:14px; padding:1.2rem; display:flex; gap:1.2rem; align-items:center; box-shadow: 0 8px 30px rgba(2,6,23,0.6);}
+    .project-screenshot{width:320px; min-width:320px; border-radius:10px; overflow:hidden; background:linear-gradient(180deg,#021124,#071826); box-shadow:0 18px 50px rgba(2,6,23,0.6);}
+    .project-screenshot img{width:100%; display:block}
+    .project-meta h3{margin-top:0}
+    .project-actions .btn{border-radius:10px; padding:.6rem 1rem}
+
+    /* ---------- Contact section ---------- */
+    .contact-cta{background:linear-gradient(90deg, rgba(32,201,151,0.06), rgba(56,189,248,0.04)); border-radius:12px; padding:1.4rem}
+    .contact-cta .muted{color:var(--muted)}
+
+    /* ---------- Misc ---------- */
+    footer{padding:3rem 0; color:var(--muted); text-align:center}
+
+    /* Responsive */
+    @media (max-width:991px){
+      .container-hero{flex-direction:column-reverse; text-align:center}
+      .profile-wrap{width:260px;height:260px}
+      .profile-clip{width:220px;height:220px}
+      .project-screenshot{width:260px;min-width:260px}
+    }
+    .footer-dark {
+        background-color: #07182a;
+        padding: 30px 0;
+        text-align: center;
+        }
+
+    .footer-dark p {
+        color: #94a3b8;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0;
+        }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background: linear-gradient(180deg, #141E30, #243B55);
+        transition: 0.4s ease;
+        padding: 20px;
+        z-index: 1050;
+        }
+    .sidebar.active {
+        left: 0;
+        }
+    .sidebar a {
+        display: block;
+        margin: 15px 0;
+        text-decoration: none;
+        transition: 0.3s;
+        }
+    .sidebar a:hover {
+        opacity: 0.8;
+        transform: translateX(5px);
+        }
+    .intro-text {
+        text-align: center;
+        margin-top: 150px;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        }
+
+    .typing {
+        border-right: 3px solid #00c6ff;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+        text-align: left;
+        }
+
+
+    .typing span {
+        color: #00c6ff; 
+        font-weight: 600;
+        }
+
+    @keyframes typing {
+        from { clip-path: inset(0 100% 0 0); }
+        to { clip-path: inset(0 0 0 0); }
+        }
+
+    @keyframes blink {
+        50% { border-color: transparent; }
+        }
+      .cv-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 12px 25px;
+          background: linear-gradient(135deg, #00c6ff, #0072ff);
+          color: white;
+          text-decoration: none;
+          border-radius: 50px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+      .cv-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+        }
+
+
+
+
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar bg-transparent fixed-top">
+  <div class="container-fluid">
+    <button class="btn btn-outline-light" id="menuToggle">
+      <i class="bi bi-list fs-3"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+  <button class="btn-close btn-close-white" id="closeSidebar"></button>
+  <ul class="list-unstyled mt-4">
+    <li><a href="#home" class="text-white fs-5">Home</a></li>
+    <li><a href="#project" class="text-white fs-5">Projects</a></li>
+    <li><a href="#about" class="text-white fs-5">About Me</a></li>
+    <li><a href="#contact" class="text-white fs-5">Contact</a></li>
+  </ul>
+</div>
+
+
+  <!-- HEADER / HERO -->
+  <header class="py-5">
+    <div class="container">
+      <div class="container-hero">
+
+        <!-- LEFT: text -->
+        <div class="hero-text" data-aos="fade-right" id="home">
+            <div class="intro-text">
+            <h1 class="typing">Hello, my name is <span>Ahmed Eleraky</span></h1>
+            </div>
+          <div class="hero-sub mb-3">Front-End Developer</div>
+          <p class="hero-desc mb-4">I build modern, responsive, and interactive web experiences using JavaScript, Vue.js, and Bootstrap 5. I focus on clean UI, smooth interactions, and performance-minded front-end code.</p>
+          <div class="d-flex gap-2 justify-content-start align-items-center">
+            <a class="btn btn-cta me-2" href="#project">View E‑Vital</a>
+            <a class="btn btn-outline-light" href="#contact">Contact</a>
+          </div>
+
+          <div class="mt-4 skills" data-aos="fade-up" data-aos-delay="300">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">Bootstrap 5</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: profile -->
+        <div class="profile-wrap" data-aos="fade-left" data-aos-delay="150">
+          <div class="profile-bg">
+            <div class="profile-clip" id="profileClip">
+              <!-- Replace assets/profile.jpg with your image file in the same folder -->
+              <img src="./صورة واتساب بتاريخ 2025-10-01 في 17.10.08_5ee34771.jpg" alt="Ahmed Eleraky">
+            </div>
+            <div class="profile-ring"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT (short) -->
+  <section class="py-5" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h2>About Me</h2>
+          <p class="muted">I’m a front-end developer with a passion for UI/UX and performance. I enjoy turning complex interfaces into simple.</p>
+        </div>
+        <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+          <!-- mini stats or quick facts -->
+          <div class="d-inline-block text-start p-3" style="background:var(--glass); border-radius:10px;">
+            <div><strong>Experience</strong></div>
+            <div class="muted">Graduation project + freelance work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT -->
+  <section class="py-5" id="project">
+    <div class="container">
+      <h2 class="mb-4">Featured Project</h2>
+      <div class="project-card" data-aos="zoom-in">
+        <div class="project-screenshot">
+          <!-- Replace assets/e-vital.png with a screenshot of E-Vital -->
+          <img src="./screencapture-e-vital-test-admin-reports-php-2025-10-11-04_07_25.png" alt="E-Vital screenshot">
+        </div>
+        <div class="project-meta flex-grow-1">
+          <h3>E‑Vital — Medical Web Platform</h3>
+          <p class="muted">A full-stack medical platform for managing appointments, patient records, and admin dashboards. Built originally with PHP, MySQL, Bootstrap 5 and enhanced front-end interactions using JavaScript.</p>
+          <ul class="muted">
+            <li>Admin dashboard</li>
+            <li>Appointment scheduling</li>
+            <li>Patient record management</li>
+          </ul>
+
+          <div class="project-actions mt-3">
+            <a href="" class="btn btn-light btn-sm me-2">Demo</a>
+            <a href="#" class="btn btn-outline-light btn-sm">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="py-5" id="contact">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-7">
+          <h2>Get in Touch</h2>
+          <p class="muted">I’m open to front-end roles and freelance projects. Let’s build something great together.</p>
+          <div class="mt-3">
+            <a href="mailto:ahmedeleraky@gmail.com" class="d-inline-flex align-items-center gap-2 text-decoration-none">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5L12 13L21 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>ahmedeleraky@gmail.com</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="contact-cta">
+            <h5 class="mb-2">Want my CV?</h5>
+            <p class="muted">Download a copy or request a project portfolio PDF.</p>
+            <div class="d-flex gap-2">
+            <a href="./Ahmed Eleraky CV (2).pdf" download="Ahmed-Eleraky-CV.pdf"class="cv-btn">
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <footer class="footer-dark">
+        <p>© 2025 Ahmed Eleraky. All Rights Reserved.</p>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({duration:900, once:true, easing:'ease-out-cubic'});
+
+    // Circular reveal for profile image after small delay
+    window.addEventListener('load', ()=>{
+      setTimeout(()=>{
+        document.getElementById('profileClip').classList.add('revealed');
+      }, 350);
+    });
+
+    // Subtle parallax for hero background based on scroll
+    window.addEventListener('scroll', ()=>{
+      const y = window.scrollY;
+      document.body.style.backgroundPosition = `center ${-y*0.05}px`;
+    });
+      const sidebar = document.getElementById('sidebar');
+  const menuToggle = document.getElementById('menuToggle');
+  const closeSidebar = document.getElementById('closeSidebar');
+
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.add('active');
+  });
+  closeSidebar.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+  });
+  
+  </script>
+</body>
+</html>
