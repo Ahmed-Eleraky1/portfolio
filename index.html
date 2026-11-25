@@ -4,232 +4,315 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ahmed Eleraky</title>
-<meta name="description" content="Ahmed Eleraky — Software Sales Specialist for web and mobile solutions: apps, websites, CRM/ERP and e-commerce, from first contact to handover.">
+<meta name="description" content="Ahmed Eleraky — Software Sales Specialist. SAR 200,000+ in closed software sales to B2B and B2C clients in Saudi Arabia and Egypt.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,800;112,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* VOICE  personal page for a CV: confident, clean, a sales person's poster
-   IDEA   a deal pipeline: Ahmed carries a client from first call to delivery
-   PICTURE one bold vermilion route through five stations, a token travelling it
-   COLOUR white, black ink, vermilion #ff4a1c as one solid mass; night vermilion on #120d0b
-   TYPE   Sofia Sans Condensed 800 + Instrument Sans
-   LAYOUT name across the top, pipeline full width beneath; phone stacks name, pipeline, contact */
-:root{color-scheme:light dark;--bg:light-dark(#ffffff,#120d0b);--ink:light-dark(#111111,#f4eee9);--mute:light-dark(#5b5753,#b5aca5);--line:light-dark(#e6e2de,#2d2522);--red:#ff4a1c;--panel:light-dark(#f6f3f0,#1c1512);--onred:#ffffff}
+/* VOICE  a confident sales person's personal site: energetic, clean, numbers up front
+   IDEA   a deal board: the closed-won total is the headline, every section is part of the deal
+   PICTURE large portrait on a cobalt field with a live counter card for SAR 200K+ closed
+   COLOUR cobalt #1f3dff field, ink #0a0f2c, white, lime #d7ff3c for wins only
+   TYPE   Archivo expanded 800 + Inter
+   LAYOUT hero split text / portrait+counter; stats strip; about; pipeline; case; B2B/B2C; experience; skills; contact */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#080c22);--ink:light-dark(#0a0f2c,#eef1ff);--mute:light-dark(#4b5170,#a9b0d6);--line:light-dark(#e3e6f3,#1e2547);--panel:light-dark(#f3f5ff,#10163a);--blue:#1f3dff;--deep:#0a0f2c;--lime:#d7ff3c}
 :root[data-theme=light]{color-scheme:light}
 :root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-padding-top:72px;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Instrument Sans",system-ui,sans-serif;overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
 a{color:inherit}
+img{max-width:100%}
 .wrap{max-width:1240px;margin:0 auto}
-.band{padding-block:clamp(36px,5vw,80px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:0 max(5vw,16px)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap}
-.mark{font:800 22px/1 "Sofia Sans Condensed",sans-serif;text-decoration:none;letter-spacing:-.01em}
-.mark b{color:var(--red)}
-nav ul{display:flex;gap:4px 20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
-nav ul a{text-decoration:none;font-weight:500;color:var(--mute);padding:10px 0;display:inline-block}
-nav ul a:hover,nav ul a:focus-visible{color:var(--ink)}
-h1,h2,h3{font-family:"Sofia Sans Condensed",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
-h1{font-size:clamp(60px,10vw,136px);line-height:.88}
+.band{padding-block:clamp(48px,6vw,96px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+h1,h2,h3{font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(32px,4.2vw,50px);margin-bottom:16px}
+h3{font-size:21px;letter-spacing:-.01em}
+.lead{font-size:18px;color:var(--mute);max-width:62ch;margin:0 0 32px}
+nav{position:sticky;top:0;z-index:9;background:var(--blue);color:#fff;padding:0 max(5vw,16px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;min-height:64px;flex-wrap:wrap}
+.mark{font:900 20px/1 Archivo,sans-serif;font-stretch:112%;text-decoration:none}
+.mark i{font-style:normal;color:var(--lime)}
+nav ul{display:flex;flex-wrap:wrap;gap:0 22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;font-weight:500;opacity:.85;display:inline-block;padding:10px 0}
+nav ul a:hover{opacity:1}
+.hero{background:var(--blue);color:#fff;padding:clamp(36px,5vw,72px) max(5vw,16px) clamp(56px,7vw,104px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 20%,rgba(255,255,255,.16),transparent 60%),repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 80px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.role{display:inline-flex;gap:8px;align-items:center;font-weight:600;background:rgba(255,255,255,.14);padding:8px 14px;border-radius:999px;margin:0 0 22px}
+.role b{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(215,255,60,.25)}}
+h1{font-size:clamp(54px,8.6vw,112px);line-height:.92;margin-bottom:24px}
 h1 span{display:block}
-h2{font-size:clamp(34px,4.4vw,52px);margin-bottom:28px}
-h3{font-size:24px;letter-spacing:-.01em}
-.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
-h1{margin-bottom:24px}
-.photo{margin:0;position:relative;aspect-ratio:1;max-width:460px;justify-self:end;width:100%}
-.photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--red);border-radius:24px}
-.photo img{position:relative;display:block;width:100%;height:100%;object-fit:cover;border-radius:24px}
-.role{font-size:20px;font-weight:600;margin:0 0 12px}
-.lede{font-size:17px;color:var(--mute);margin:0 0 24px;max-width:46ch}
+.hero p.intro{font-size:19px;max-width:44ch;margin:0 0 30px;color:#e6e9ff}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
-.btn.solid{background:var(--red);border-color:var(--red);color:var(--onred)}
-.btn:hover{transform:translateY(-1px)}
-.btn:focus-visible,nav a:focus-visible,.mark:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-.pipe{background:var(--red);color:var(--onred);padding-left:max(5vw,16px);padding-right:max(5vw,16px);padding-block:clamp(36px,5vw,72px);position:relative;overflow:hidden}
-.pipe h2{color:var(--onred);margin-bottom:8px}
-.pipe .sub{margin:0 0 40px;font-size:17px;max-width:60ch;color:#fff}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid currentColor;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.lime{background:var(--lime);border-color:var(--lime);color:var(--deep)}
+.btn:focus-visible,nav a:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.portrait{position:relative;justify-self:end;width:100%;max-width:480px}
+.portrait .frame{aspect-ratio:1;border-radius:32px;overflow:hidden;border:6px solid rgba(255,255,255,.9);box-shadow:0 30px 60px -20px rgba(5,10,60,.55);background:#cfd6ff}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.won{position:absolute;left:-28px;bottom:-30px;background:var(--deep);color:#fff;border-radius:20px;padding:18px 22px;min-width:250px;box-shadow:0 20px 40px -12px rgba(0,0,0,.45)}
+.won small{display:block;font-size:13px;color:#b9c1ff;font-weight:500}
+.won strong{display:block;font:900 clamp(34px,4vw,46px)/1.05 Archivo,sans-serif;font-stretch:112%;color:var(--lime);white-space:nowrap;font-variant-numeric:tabular-nums}
+.won .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.15);margin-top:12px;overflow:hidden}
+.won .bar i{display:block;height:100%;width:100%;background:var(--lime);transform-origin:left;animation:grow 2.2s cubic-bezier(.2,.8,.2,1) .4s both}
+@keyframes grow{from{transform:scaleX(0)}}
+.chip{position:absolute;right:-12px;top:22px;background:var(--lime);color:var(--deep);font-weight:700;border-radius:999px;padding:10px 16px;font-size:15px;box-shadow:0 12px 24px -10px rgba(0,0,0,.4)}
+.rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.45s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.stat{padding:28px max(2vw,16px);border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font:900 clamp(30px,3.4vw,44px)/1 Archivo,sans-serif;font-stretch:112%;color:var(--blue);white-space:nowrap}
+:root[data-theme=dark] .stat strong{color:var(--lime)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .stat strong{color:var(--lime)}}
+.stat span{display:block;margin-top:8px;color:var(--mute);font-size:15px}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(28px,5vw,80px)}
+.about p{margin:0 0 16px;font-size:17px}
+.about .facts{display:grid;gap:12px;margin-top:8px}
+.fact{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.fact b{font-weight:600}
+.fact span{color:var(--mute)}
+.pipe{background:var(--deep);color:#fff}
+.pipe .lead{color:#c3c9f0}
 .route{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0}
-.route::before{content:"";position:absolute;left:28px;right:28px;top:27px;height:6px;background:#fff;border-radius:3px}
-.tok{position:absolute;top:18px;left:20px;width:24px;height:24px;border-radius:50%;background:#111;border:4px solid #fff;animation:run 9s cubic-bezier(.6,0,.4,1) infinite}
-@keyframes run{0%{left:20px}20%{left:20px}100%{left:calc(100% - 44px)}}
-.route li{position:relative}
-.dot{width:60px;height:60px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font:800 26px/1 "Sofia Sans Condensed",sans-serif;position:relative;border:6px solid #fff;margin-bottom:18px}
-.route li:last-child .dot{background:#fff;color:var(--red)}
-.route h3{color:#fff;font-size:24px;margin-bottom:6px}
-.route p{margin:0;font-size:15px;line-height:1.5;color:#fff}
-.route .tool{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;background:rgba(0,0,0,.22);padding:4px 10px;border-radius:999px}
-.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,4vw,64px)}
-.side p{color:var(--mute);margin:0;max-width:34ch}
-.job{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:8px 28px;padding:26px 0;border-top:1px solid var(--line)}
+.route::before{content:"";position:absolute;left:30px;right:30px;top:29px;height:4px;background:rgba(255,255,255,.18);border-radius:2px}
+.route::after{content:"";position:absolute;left:30px;top:29px;height:4px;width:calc(100% - 60px);background:var(--lime);border-radius:2px;transform-origin:left;animation:fill 6s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes fill{0%{transform:scaleX(0)}70%,100%{transform:scaleX(1)}}
+.route li{position:relative;z-index:1}
+.dot{width:62px;height:62px;border-radius:18px;background:var(--blue);display:grid;place-items:center;font:900 24px/1 Archivo,sans-serif;margin-bottom:18px;border:3px solid var(--deep);box-shadow:0 0 0 2px rgba(255,255,255,.2)}
+.route li:last-child .dot{background:var(--lime);color:var(--deep)}
+.route h3{margin-bottom:6px;color:#fff}
+.route p{margin:0;font-size:15px;color:#c3c9f0;line-height:1.5}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.casecard{background:var(--panel);border-radius:24px;padding:clamp(22px,3vw,36px)}
+.tag{display:inline-block;font-size:13px;font-weight:600;background:var(--blue);color:#fff;border-radius:999px;padding:5px 12px;margin-bottom:16px}
+.steps{display:grid;gap:18px;margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px}
+.steps li i{width:34px;height:34px;border-radius:10px;background:var(--blue);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700}
+.steps b{display:block;margin-bottom:2px}
+.steps span{color:var(--mute)}
+.clock{display:flex;align-items:flex-end;gap:16px;margin-top:24px}
+.clock strong{font:900 clamp(64px,8vw,96px)/.9 Archivo,sans-serif;font-stretch:112%;color:var(--blue)}
+.clock span{font-weight:600;padding-bottom:8px}
+.days{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:4px;margin-top:18px}
+.days i{height:30px;border-radius:5px;background:var(--line);animation:day .4s ease both}
+.days i:last-child{background:var(--lime)}
+.days i:not(:last-child){background:var(--blue);opacity:.8}
+.quote{font:800 clamp(22px,2.4vw,28px)/1.25 Archivo,sans-serif;font-stretch:112%;margin:24px 0 0;padding-top:20px;border-top:3px solid var(--lime)}
+.markets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.mk{border-radius:24px;padding:clamp(22px,3vw,34px);border:1px solid var(--line)}
+.mk.b2b{background:var(--blue);color:#fff;border-color:var(--blue)}
+.mk h3{font-size:28px;margin-bottom:4px}
+.mk .who{margin:0 0 16px;opacity:.85}
+.mk ul{margin:0;padding-left:20px}
+.mk li{margin:6px 0}
+.job{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:8px 28px;padding:26px 0;border-top:1px solid var(--line)}
 .job:last-child{border-bottom:1px solid var(--line)}
-.when{font-weight:600;color:var(--mute);white-space:nowrap}
-.job h3{margin-bottom:4px}
-.org{font-weight:600;margin:0 0 10px}
-.org em{font-style:normal;color:var(--red)}
+.when{font-weight:600;color:var(--blue);white-space:nowrap}
+:root[data-theme=dark] .when{color:var(--lime)}
+.org{font-weight:600;margin:4px 0 10px;color:var(--mute)}
 .job ul{margin:0;padding-left:20px}
 .job li{margin:4px 0}
-.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px}
-.card{background:var(--panel);border-radius:14px;padding:22px}
-.card h3{font-size:22px;margin-bottom:6px}
-.card p{margin:0;color:var(--mute);font-size:15px}
-.doc{width:46px;height:58px;border-radius:5px;background:var(--bg);border:2px solid var(--ink);position:relative;margin-bottom:16px}
-.doc::before{content:"";position:absolute;left:8px;right:8px;top:10px;height:8px;background:var(--red);border-radius:2px}
-.doc::after{content:"";position:absolute;left:8px;right:14px;top:24px;height:20px;background:repeating-linear-gradient(var(--ink) 0 2px,transparent 2px 7px);opacity:.55}
 .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
-.skills h3{font-size:22px;margin-bottom:12px;padding-bottom:10px;border-bottom:3px solid var(--red)}
+.skills h3{margin-bottom:12px}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
-.tags span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:500;background:var(--bg)}
-.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
-.edu .card h3{font-size:22px}
-.contact{background:#111;color:#fff;padding-left:max(5vw,16px);padding-right:max(5vw,16px);padding-block:clamp(44px,6vw,88px)}
-:root[data-theme=dark] .contact{background:#000}
-.contact h2{color:#fff;font-size:clamp(44px,7vw,88px);margin-bottom:16px}
-.contact h2 b{color:var(--red)}
-.contact p{color:#d6d0cb;max-width:52ch;margin:0 0 28px;font-size:17px}
-.contact .btn{border-color:#fff;color:#fff}
-.contact .btn.solid{border-color:var(--red)}
-.num{font-weight:600;white-space:nowrap;direction:ltr;unicode-bidi:isolate}
-.lines{display:flex;flex-wrap:wrap;gap:8px 32px;margin-top:28px;color:#d6d0cb;font-size:15px}
-footer{padding:20px max(5vw,16px);color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
-@media(max-width:900px){.hero{grid-template-columns:minmax(0,1fr);align-items:start}.photo{justify-self:start;max-width:340px;margin-right:18px}.skills{grid-template-columns:minmax(0,1fr)}.grid2{grid-template-columns:minmax(0,1fr);gap:8px}}
-@media(max-width:760px){
-.route{grid-template-columns:minmax(0,1fr);gap:26px}
-.route::before{left:27px;right:auto;top:28px;bottom:28px;width:6px;height:auto}
-.route li{padding-left:84px;min-height:60px}
-.dot{position:absolute;left:0;top:0;margin:0}
-.tok{display:none}
-.job{grid-template-columns:minmax(0,1fr)}
-nav ul{gap:0 16px}
-}
-@media(prefers-reduced-motion:reduce){.tok{animation:none;left:calc(100% - 44px)}html{scroll-behavior:auto}.btn:hover{transform:none}}
+.tags span{border-radius:999px;padding:7px 13px;font-size:14px;font-weight:500;background:var(--panel);border:1px solid var(--line)}
+.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.edu .casecard p{margin:6px 0 0;color:var(--mute)}
+.contact{background:var(--blue);color:#fff}
+.contact h2{font-size:clamp(44px,7vw,92px);margin-bottom:18px}
+.contact h2 i{font-style:normal;color:var(--lime)}
+.contact p{color:#e1e5ff;max-width:56ch;font-size:18px;margin:0 0 28px}
+.lines{display:flex;flex-wrap:wrap;gap:8px 32px;margin-top:28px;color:#e1e5ff}
+.num{white-space:nowrap}
+footer{padding:22px max(5vw,16px);color:var(--mute);font-size:13px}
+@media(max-width:960px){.hero .wrap,.about,.case{grid-template-columns:minmax(0,1fr)}.portrait{justify-self:center;max-width:420px;margin-top:8px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.skills{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.route{grid-template-columns:minmax(0,1fr);gap:24px}.route::before,.route::after{left:29px;right:auto;top:30px;bottom:30px;width:4px;height:auto}.route::after{transform-origin:top;animation-name:fillv}.route li{padding-left:84px;min-height:62px}.dot{position:absolute;left:0;top:0;margin:0}.markets,.edu{grid-template-columns:minmax(0,1fr)}.job{grid-template-columns:minmax(0,1fr)}.won{left:-8px;bottom:-24px;min-width:0}.chip{right:-6px}}
+@keyframes day{from{opacity:0;transform:scaleY(.2)}}
+@keyframes fillv{0%{transform:scaleY(0)}70%,100%{transform:scaleY(1)}}
+@media(max-width:480px){.fact{grid-template-columns:minmax(0,1fr);gap:2px}.won strong{font-size:30px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <nav aria-label="Main">
   <div class="wrap">
-    <a class="mark" href="#top">Ahmed <b>Eleraky</b></a>
+    <a class="mark" href="#top">Ahmed <i>Eleraky</i></a>
     <ul>
-      <li><a href="#process">How I work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">How I sell</a></li>
+      <li><a href="#case">Deal story</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#toolkit">Toolkit</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="band" id="top">
-  <div class="wrap hero">
+<header class="hero" id="top">
+  <div class="wrap">
     <div>
-      <h1><span>Ahmed</span><span>Eleraky</span></h1>
-      <p class="role">Software Sales Specialist · Web &amp; Mobile Solutions</p>
-      <p class="lede">I sell custom software to B2B clients in Saudi Arabia and Egypt: mobile apps, websites, CRM and ERP systems and e-commerce platforms. With a front-end background, I connect what the client needs with what the delivery team builds.</p>
-      <div class="btns">
-        <a class="btn solid" href="#contact">Get in touch</a>
-        <a class="btn" href="https://www.linkedin.com/in/ahmed-eleraky-86593023a/">LinkedIn</a>
+      <p class="role rise"><b></b>Software Sales Specialist · Web &amp; Mobile</p>
+      <h1 class="rise d1"><span>Ahmed</span><span>Eleraky</span></h1>
+      <p class="intro rise d2">I sell custom software — apps, websites, CRM/ERP systems and e-commerce — to companies and individual clients in Saudi Arabia and Egypt, and I make sure what I sell is what gets built.</p>
+      <div class="btns rise d3">
+        <a class="btn lime" href="#contact">Let's talk</a>
+        <a class="btn" href="#case">See a deal I closed</a>
       </div>
     </div>
-    <figure class="photo"><img src="photo.webp" alt="Ahmed Eleraky" width="480" height="480"></figure>
+    <div class="portrait rise d4">
+      <div class="frame"><img src="photo.webp" alt="Ahmed Eleraky" width="720" height="720"></div>
+      <span class="chip">B2B · B2C</span>
+      <div class="won" aria-label="More than 200,000 Saudi riyals in closed sales">
+        <small>Closed-won software sales</small>
+        <strong>SAR <span id="count">200,000</span>+</strong>
+        <div class="bar"><i></i></div>
+      </div>
+    </div>
   </div>
 </header>
 
-<section class="pipe" id="process" aria-labelledby="process-h">
+<section class="stats" aria-label="Highlights">
+  <div class="stat"><strong>200K+</strong><span>SAR in software deals closed</span></div>
+  <div class="stat"><strong>B2B + B2C</strong><span>Companies and individual clients</span></div>
+  <div class="stat"><strong>KSA · EG</strong><span>Two markets, Arabic and English</span></div>
+  <div class="stat"><strong>14 days</strong><span>Car auction app: first call to signed deal</span></div>
+</section>
+
+<section class="band" id="about" aria-labelledby="about-h">
+  <div class="wrap about">
+    <div>
+      <h2 id="about-h">A salesperson who speaks developer</h2>
+      <p class="lead" style="margin:0">I started as a front-end developer and moved into sales. Now I use both: I know how software gets built, and I know how to sell it.</p>
+    </div>
+    <div>
+      <p>I'm a Management Information Systems graduate from Mansoura, Egypt. I built E-Vital, a medical web platform, before moving into software sales in 2025. Since then I've sold mobile apps, websites, CRM and ERP systems and e-commerce platforms to clients in Saudi Arabia and Egypt.</p>
+      <p>Most clients come to me with an idea, not a spec. My job is to understand the business behind it, turn it into a scope the development team can build, price it fairly and close it, then stay with the client through handover so nothing gets lost between the sale and the delivery.</p>
+      <div class="facts">
+        <div class="fact"><b>Based in</b><span>Mansoura, Egypt · working with Saudi clients</span></div>
+        <div class="fact"><b>Languages</b><span>Arabic (native, Egyptian and Gulf clients) · English</span></div>
+        <div class="fact"><b>Background</b><span>B.Sc. MIS, MET (2021 – 2025) · front-end developer</span></div>
+        <div class="fact"><b>Strength</b><span>Turning a client's idea into a clear scope and a signed deal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band pipe" id="process" aria-labelledby="process-h">
   <div class="wrap">
-    <h2 id="process-h">From first call to handover</h2>
-    <p class="sub">I manage the full B2B sales cycle, so what the client is promised is what the team builds.</p>
+    <h2 id="process-h">How I sell</h2>
+    <p class="lead">I run the full cycle myself, so the promise and the product match.</p>
     <ol class="route">
-      <span class="tok" aria-hidden="true"></span>
-      <li><div class="dot">1</div><h3>Prospect</h3><p>Generate and qualify B2B leads that need an app, a website or a business system.</p><span class="tool">Lead qualification</span></li>
-      <li><div class="dot">2</div><h3>Discover</h3><p>Discovery meetings that turn a business problem into a clear solution scope.</p><span class="tool">Requirements · Scope</span></li>
-      <li><div class="dot">3</div><h3>Propose</h3><p>Tailored technical and financial proposals, pricing options and timelines for decision-makers.</p><span class="tool">Proposal · Pricing</span></li>
-      <li><div class="dot">4</div><h3>Close</h3><p>Contract and confidentiality terms drafted, negotiated and signed.</p><span class="tool">Negotiation · Closing</span></li>
-      <li><div class="dot">5</div><h3>Hand over</h3><p>Hand the client to the delivery team, follow up, and grow the account with upsells.</p><span class="tool">Handover · Account growth</span></li>
+      <li><div class="dot">1</div><h3>Qualify</h3><p>Find and qualify leads that need an app, a website or a business system.</p></li>
+      <li><div class="dot">2</div><h3>Discover</h3><p>Understand the workflow, users and goals behind the idea.</p></li>
+      <li><div class="dot">3</div><h3>Scope</h3><p>Turn needs into a clear scope with the technical and design teams.</p></li>
+      <li><div class="dot">4</div><h3>Propose &amp; close</h3><p>Tailored technical and financial proposal, negotiation and signature.</p></li>
+      <li><div class="dot">5</div><h3>Hand over</h3><p>Hand over to delivery, follow up and grow the account.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="band" id="experience" aria-labelledby="exp-h">
-  <div class="wrap grid2">
-    <div class="side">
-      <h2 id="exp-h">Experience</h2>
-      <p>B2B software sales across Saudi Arabia and Egypt, owning the deal from first lead to handover.</p>
-    </div>
+<section class="band" id="case" aria-labelledby="case-h">
+  <div class="wrap case">
     <div>
-      <article class="job">
-        <div class="when">Feb 2026 – Present</div>
-        <div>
-          <h3>Software Sales Specialist</h3>
-          <p class="org">True Ventures (formerly Al Alamia Al Hurra) <em>·</em> Saudi Arabia</p>
-          <ul>
-            <li>Sell custom software: mobile apps, websites, CRM and ERP systems, e-commerce platforms and business automation.</li>
-            <li>Run discovery meetings to understand business challenges, workflows, target users and commercial goals.</li>
-            <li>Turn requirements into clear solution scopes, working with technical, business analysis, design and project teams.</li>
-            <li>Prepare and present technical and financial proposals, pricing options and timelines to decision-makers.</li>
-            <li>Manage the full B2B cycle from lead qualification through negotiation, closing and post-sale handover, consistently meeting assigned targets.</li>
-            <li>Keep client relationships active, handle objections and find upselling and cross-selling opportunities.</li>
-          </ul>
-        </div>
-      </article>
-      <article class="job">
-        <div class="when">Oct 2025 – Jan 2026</div>
-        <div>
-          <h3>Software Sales Specialist</h3>
-          <p class="org">Azraq Company <em>·</em> Egypt</p>
-          <ul>
-            <li>Generated and qualified B2B leads for website and mobile app development.</li>
-            <li>Ran discovery meetings and proposed tailored digital solutions.</li>
-            <li>Presented technical proposals, pricing plans and product demos to decision-makers.</li>
-            <li>Negotiated contracts, closed deals and handed clients over to the development team.</li>
-          </ul>
-        </div>
-      </article>
+      <span class="tag">Deal story</span>
+      <h2 id="case-h">The car auction app nobody understood</h2>
+      <p class="lead">A client wanted to build a car auction app, but the people he had spoken to couldn't see his idea the way he did.</p>
+      <ol class="steps">
+        <li><i>1</i><div><b>Listened first</b><span>Let him walk me through how the auctions should work and asked until the bidding flow and his goals were clear.</span></div></li>
+        <li><i>2</i><div><b>Made it visible</b><span>Opened a similar auction platform with him and used it as a reference: what to keep, what to change, what makes his app different.</span></div></li>
+        <li><i>3</i><div><b>Scoped and closed</b><span>Turned the idea into a clear scope and a tailored proposal, and closed the deal.</span></div></li>
+      </ol>
+    </div>
+    <div class="casecard">
+      <div class="clock"><strong>14</strong><span>days from first contact<br>to signed deal</span></div>
+      <div class="days" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="quote">Clients don't buy features. They buy being understood.</p>
     </div>
   </div>
 </section>
 
-<section class="band" id="toolkit" aria-labelledby="kit-h" style="padding-top:0">
+<section class="band" aria-labelledby="mk-h" style="padding-top:0">
   <div class="wrap">
-    <h2 id="kit-h">Sales documents I prepare</h2>
-    <div class="kit">
-      <div class="card"><div class="doc" aria-hidden="true"></div><h3>Proposal deck</h3><p>Technical and financial offer: scope, timeline, pricing before and after 15% VAT.</p></div>
-      <div class="card"><div class="doc" aria-hidden="true"></div><h3>SRS</h3><p>Turns meeting notes into a requirements spec the developers can build from.</p></div>
-      <div class="card"><div class="doc" aria-hidden="true"></div><h3>Meeting minutes</h3><p>Decisions, owners and next steps sent after every client meeting.</p></div>
-      <div class="card"><div class="doc" aria-hidden="true"></div><h3>App contract</h3><p>Software development contract: scope, payment milestones and support terms.</p></div>
-      <div class="card"><div class="doc" aria-hidden="true"></div><h3>NDA undertaking</h3><p>One-sided confidentiality pledge that makes clients comfortable sharing their idea.</p></div>
+    <h2 id="mk-h">Who I sell to</h2>
+    <div class="markets">
+      <div class="mk b2b">
+        <h3>B2B</h3>
+        <p class="who">Companies and organisations</p>
+        <ul>
+          <li>CRM and ERP systems, business automation</li>
+          <li>Several decision-makers, longer cycles</li>
+          <li>Formal proposals, pricing options and contracts</li>
+        </ul>
+      </div>
+      <div class="mk">
+        <h3>B2C</h3>
+        <p class="who" style="color:var(--mute)">Individual owners and entrepreneurs</p>
+        <ul>
+          <li>Mobile apps, websites and online stores</li>
+          <li>One decision-maker, faster, more personal deals</li>
+          <li>Trust built by understanding the idea fast</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="band" id="skills" aria-labelledby="skills-h" style="background:var(--panel)">
+<section class="band" id="experience" aria-labelledby="exp-h" style="background:var(--panel)">
+  <div class="wrap">
+    <h2 id="exp-h">Experience</h2>
+    <article class="job">
+      <div class="when">Feb 2026 – Present</div>
+      <div>
+        <h3>Software Sales Specialist</h3>
+        <p class="org">True Ventures (formerly Al Alamia Al Hurra) · Saudi Arabia</p>
+        <ul>
+          <li>Sell custom software: mobile apps, websites, CRM and ERP systems, e-commerce and business automation.</li>
+          <li>Run discovery meetings and turn requirements into clear scopes with technical, design and project teams.</li>
+          <li>Prepare and present technical and financial proposals, pricing options and timelines to decision-makers.</li>
+          <li>Manage the full B2B cycle from lead qualification to closing and post-sale handover, meeting assigned targets.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="job">
+      <div class="when">Oct 2025 – Jan 2026</div>
+      <div>
+        <h3>Software Sales Specialist</h3>
+        <p class="org">Azraq Company · Egypt</p>
+        <ul>
+          <li>Generated and qualified B2B leads for website and mobile app development.</li>
+          <li>Presented proposals, pricing plans and product demos; negotiated and closed deals.</li>
+          <li>Handed clients over to the development team and kept the relationship active.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="skills-h">
   <div class="wrap">
     <h2 id="skills-h">Skills</h2>
     <div class="skills">
-      <div><h3>Sales &amp; business</h3><div class="tags"><span>Lead qualification</span><span>Discovery meetings</span><span>Requirements analysis</span><span>Solution presentation</span><span>Proposals &amp; pricing</span><span>Negotiation &amp; closing</span><span>Account follow-up</span><span>Upselling</span></div></div>
-      <div><h3>Solutions I sell</h3><div class="tags"><span>Mobile apps</span><span>Websites</span><span>CRM systems</span><span>ERP systems</span><span>E-commerce platforms</span><span>Business automation</span></div></div>
-      <div><h3>Technical</h3><div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript (ES6+)</span><span>Bootstrap 5</span><span>PHP</span><span>MySQL</span><span>REST APIs</span><span>Git &amp; GitHub</span><span>Node.js (learning)</span></div></div>
+      <div><h3>Sales</h3><div class="tags"><span>Lead qualification</span><span>Discovery meetings</span><span>Solution presentation</span><span>Proposals &amp; pricing</span><span>Negotiation</span><span>Closing</span><span>Upselling</span></div></div>
+      <div><h3>Solutions</h3><div class="tags"><span>Mobile apps</span><span>Websites</span><span>CRM</span><span>ERP</span><span>E-commerce</span><span>Automation</span><span>Requirements analysis</span></div></div>
+      <div><h3>Technical</h3><div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap 5</span><span>PHP</span><span>MySQL</span><span>REST APIs</span><span>Git</span></div></div>
+    </div>
+    <div class="edu" style="margin-top:40px">
+      <div class="casecard"><h3>B.Sc. Management Information Systems</h3><p>Misr Higher Institute for Commerce &amp; Computers (MET) · 2021 – 2025</p></div>
+      <div class="casecard"><h3>E-Vital — medical web platform</h3><p>Connects patients, doctors and clinics: bookings, medical records, admin dashboard and email reminders. PHP, MySQL, Bootstrap 5.</p></div>
     </div>
   </div>
 </section>
 
-<section class="band" aria-labelledby="edu-h">
+<section class="band contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <h2 id="edu-h">Education &amp; projects</h2>
-    <div class="edu">
-      <div class="card"><h3>Bachelor's in Management Information Systems</h3><p>Misr Higher Institute for Commerce &amp; Computers (MET) · 2021 – 2025</p></div>
-      <div class="card"><h3>E-Vital — medical web platform</h3><p>Connects patients, doctors and clinics: bookings, medical records, admin dashboard, email reminders and reports. Built with PHP, MySQL and Bootstrap 5.</p><p style="margin-top:10px"><a href="https://github.com/Ahmed-Eleraky1">View on GitHub</a></p></div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact" aria-labelledby="contact-h">
-  <div class="wrap">
-    <h2 id="contact-h">Let's build <b>something.</b></h2>
-    <p>Looking for someone who can sell software and bridge clients with delivery teams? Email me or connect on LinkedIn.</p>
+    <h2 id="contact-h">Let's close <i>the next one.</i></h2>
+    <p>Looking for someone who can sell software and keep the promise through delivery? Let's talk.</p>
     <div class="btns">
-      <a class="btn solid" href="mailto:ahmedeleraky70@gmail.com">Email me</a>
+      <a class="btn lime" href="mailto:ahmedeleraky70@gmail.com">Email me</a>
       <a class="btn" href="https://www.linkedin.com/in/ahmed-eleraky-86593023a/">LinkedIn</a>
       <a class="btn" href="https://wa.me/201002959192">WhatsApp</a>
       <a class="btn" href="https://github.com/Ahmed-Eleraky1">GitHub</a>
@@ -239,5 +322,21 @@ nav ul{gap:0 16px}
 </section>
 
 <footer><div class="wrap">© 2026 Ahmed Eleraky</div></footer>
+
+<script>
+{
+  const el=document.getElementById('count');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(el&&!reduce){
+    const end=200000,dur=2200,t0=performance.now()+400;
+    const fmt=n=>Math.round(n).toLocaleString('en-US');
+    el.textContent='0';
+    const step=t=>{const p=Math.min(Math.max((t-t0)/dur,0),1);const e=1-(1-p)**3;el.textContent=fmt(end*e);if(p<1)requestAnimationFrame(step)};
+    requestAnimationFrame(step);
+  }
+  const days=document.querySelectorAll('.days i');
+  days.forEach((d,i)=>d.style.animationDelay=(i*0.08)+'s');
+}
+</script>
 </body>
 </html>
